@@ -10,6 +10,31 @@
             font-family: code;
             color: white;
         }
+        #load{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            text-align: center;
+        }
+        .textboxes{
+            transition: .3s background;
+            height: 25px;
+            width: 350px;
+            background: #171717;
+            border: 0;
+            border-radius: 1px;
+            outline: none;
+            color: white;
+            font-family: code;
+            
+        }
+        .textboxes::placeholder{
+            color: rgb(172, 172, 172);
+        }
+        .textboxes:focus{
+            background: rgb(7, 7, 7);
+        }
     </style>
     <head>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -19,8 +44,10 @@
     <body>
         
         <div id='load'>
-            <img src="assets/images/logo.png" height="200px;">
-            <h1 style="color: rgb(255, 144, 53);">BlazeClient</h1>
+            <img src="assets/images/logo.png" style="margin: 0;" height="200px;">
+            <h1 style="color: rgb(255, 144, 53); margin: 0;">BlazeClient</h1>
+            <br>
+            <input type="password" placeholder="KEY HERE" class="textboxes"/>
         </div>
 
         <script>
