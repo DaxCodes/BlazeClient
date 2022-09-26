@@ -53,6 +53,9 @@
         #confirmkey:active{
             background: #000000;
         }
+        a{
+            color: orange;
+        }
     </style>
     <head>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -70,6 +73,7 @@
             <br>
             <br>
             <button id="confirmkey">Confirm</button>
+            <h5><a href="https://subscribe1.daxcodes.repl.co/" target="_blank">Don't have a key?</a></h5>
         </div>
         <div id='main' style="opacity: 0; pointer-events: none; transition: .3s opacity;">
             <div id="topbar">
@@ -93,6 +97,15 @@
                                 $('#load').remove();
                             }, 1500)
                         }, 1500)
+                    } else {
+                        $(this).html('Incorrect!');
+                        $(this).css('color', '#FF0000');
+                        $(this).css('pointer-events', 'none');
+                        setTimeout(function(){
+                            $('#confirmkey').html('Confirm');
+                            $('#confirmkey').css('color', '#FFFFFF');
+                            $('#confirmkey').css('pointer-events', 'all');
+                        }, 1500) 
                     }
                 })
             })
