@@ -1,4 +1,4 @@
-# Welcome to BlazeClient!
+# Welcome to BlazeClient BETA!
 Get things started by starting the program!
 
 # How to start?
