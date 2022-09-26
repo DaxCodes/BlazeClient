@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        @font-face{
+            src: url('assets/font.ttf');
+            font-family: code;
+        }
+        body{
+            background: #373737;
+            font-family: code;
+            color: white;
+        }
+        #load{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            text-align: center;
+        }
+        .textboxes{
+            transition: .3s background;
+            height: 25px;
+            width: 350px;
+            background: #171717;
+            border: 0;
+            border-radius: 1px;
+            outline: none;
+            color: white;
+            font-family: code;
+            
+        }
+        .textboxes::placeholder{
+            color: rgb(172, 172, 172);
+        }
+        .textboxes:focus{
+            background: rgb(7, 7, 7);
+        }
+        #confirmkey{
+            transition: .3s background;
+            width: 300px;
+            background: #171717;
+            border: 0;
+            border-radius: 1px;
+            outline: none;
+            color: white;
+            font-family: code;
+            font-size: 20px;
+        }
+        #confirmkey:hover{
+            background: #0f0f0f;
+            cursor: pointer;
+        }
+        #confirmkey:active{
+            background: #000000;
+        }
+    </style>
+    <head>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <link rel="shortcut icon" href="assets/images/logo.png" type="image/png">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    </head>
+    <body>
+        
+        <div id='load'>
+            <img src="assets/images/logo.png" style="margin: 0;" height="200px;">
+            <h1 style="color: rgb(255, 144, 53); margin: 0;">BlazeClient</h1>
+            <br>
+            <input type="password" placeholder="KEY HERE" id='key' class="textboxes"/>
+            <br>
+            <br>
+            <button id="confirmkey">Confirm</button>
+        </div>
+        <div id='main' style="opacity: 0; pointer-events: none; transition: .3s opacity;">
+            <div id="topbar">
+                <img src="assets/images/logo.png" height='50px'/>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function(){
+                // load key confirmation \\
+                $('#confirmkey').click(function(){
+                    if($('#key').val()=='firewall'){
+                        $(this).html('Success!');
+                        $(this).css('color', '#1FFF00');
+                        $(this).css('pointer-events', 'none');
+                        setTimeout(function(){
+                            $('#load').fadeOut();
+                            $('#main').css('opacity', '1');
+                            $('#main').css('pointer-events', 'all');
+                            setTimeout(function(){
+                                $('#load').remove();
+                            }, 1500)
+                        }, 1500)
+                    }
+                })
+            })
+            
+        </script>
+    </body>
+</html>
