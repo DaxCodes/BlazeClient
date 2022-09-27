@@ -60,6 +60,41 @@
         }
         #topbar{
             text-align: center;
+            background:rgb(29, 29, 29);
+            border-bottom: 3px solid rgb(46, 46, 46);
+            display: flex;
+            float: left;
+            padding: 3px;
+            width: 9999px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .topbarBtn{
+            color: white;
+            background: #5F5F5F;
+            font-family: code;
+            padding: 5px;
+            margin: 3px;
+            border: 0;
+            width: 125px;
+            font-size: 19px;
+            transition: .2s background;
+        }
+        .notavaliable{
+            opacity: .3;
+            pointer-events: none;
+        }
+        .topbarBtn:hover{
+            background: #3f3f3f;
+            cursor: pointer;
+        }
+        .topbarBtn:active{
+            background: rgb(14, 14, 14);
+        }
+        #home{
+          text-align: center;  
         }
     </style>
     <head>
@@ -78,14 +113,33 @@
             <br>
             <br>
             <button id="confirmkey">Confirm</button>
+            <br>
+            <br>
+            <br>
+            <br>
             <h5><a href="https://subscribe1.daxcodes.repl.co/" target="_blank">Don't have a key?</a></h5>
         </div>
         <div id='main' style="opacity: 0; pointer-events: none; transition: .3s opacity;">
             <div id="topbar">
                 <img src="assets/images/logo.png" height='50px'/>
+                <button class="topbarBtn">Home</button>
+                <button class="topbarBtn notavaliable">Unblocker</button>
+                <button class="topbarBtn">Scripts</button>
+                <button class="topbarBtn">Music</button>
+                <button class="topbarBtn">Settings</button>
+            </div>
+            <div id="home">
+                <h1>sup user,</h1>
+                <br>
+                <h2>thanks for using <div style="color: orange">BlazeClient!</div></h2>
+                <img src="assets/images/crowbar.gif" height="250px"/>
+                <br>
+                <br>
+                <h1>basically you can execute scripts, unblock websites, etc. it fun :D</h1>
             </div>
         </div>
-
+        
+        
         <script>
             $(document).ready(function(){
                 // load key confirmation \\
